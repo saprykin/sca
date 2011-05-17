@@ -1,0 +1,31 @@
+﻿Build started 29.04.2011 13:02:57.
+     1>Project "D:\libsca\build\win32\VS10\scalib.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\scalib.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../config. /I../../../src /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D SCALIB_EXPORTS /D SCALIB_COMPILATION /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\src\scaearth.c
+         scaearth.c
+       Link:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\libsca\build\win32\VS10\Release\scalib.dll" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"../def/scalib.def" /MANIFEST /ManifestFile:"Release\scalib.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\libsca\build\win32\VS10\Release\scalib.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\libsca\build\win32\VS10\Release\scalib.lib" /MACHINE:X86 /DLL Release\scaangle.obj
+         Release\scacoordinates.obj
+         Release\scaearth.obj
+         Release\scajulianday.obj
+         Release\scamisc.obj
+         Release\scamoon.obj
+         Release\scaplanetdata.obj
+         Release\scastar.obj
+         Release\scasun.obj
+            Creating library D:\libsca\build\win32\VS10\Release\scalib.lib and object D:\libsca\build\win32\VS10\Release\scalib.exp
+         Generating code
+         Finished generating code
+         scalib.vcxproj -> D:\libsca\build\win32\VS10\Release\scalib.dll
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\libsca\build\win32\VS10\Release\scalib.dll;#2" /manifest Release\scalib.dll.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Release\scalib.unsuccessfulbuild".
+         Touching "Release\scalib.lastbuildstate".
+     1>Done Building Project "D:\libsca\build\win32\VS10\scalib.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.93

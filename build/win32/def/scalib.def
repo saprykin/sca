@@ -1,0 +1,66 @@
+LIBRARY		scalib
+VERSION		0.0.1
+EXPORTS
+	sca_angle_reduce
+	sca_angle_from_degrees
+	sca_angle_from_hours
+	sca_angle_from_radians
+	sca_angle_to_degrees
+	sca_angle_to_hours
+	sca_angle_to_radians
+	sca_angle_get_degrees
+	sca_angle_get_arcmins
+	sca_angle_get_arcsecs
+	sca_angle_get_marcsecs
+	sca_angle_get_hours
+	sca_angle_get_mins
+	sca_angle_get_secs
+	sca_angle_get_msecs
+	sca_angle_get_sin
+	sca_angle_get_cos
+	sca_angle_get_sincos
+	sca_angle_from_decimal_degrees
+
+	sca_coordinates_equatorial_to_ecliptic
+	sca_coordinates_ecliptic_to_equatorial
+	sca_coordinates_equatorial_to_local
+
+	sca_earth_get_ecliptic_obliquity
+	sca_earth_get_nutation
+	sca_earth_get_refraction
+	sca_earth_get_parallax_equatorial
+	sca_earth_get_orbit_eccentricity
+	sca_earth_get_aberration_constant
+	sca_earth_get_perihelion_longitude
+
+	sca_jd_from_calendar_date
+	sca_jd_to_calendar_date
+	sca_jd_get_weekday
+	sca_jd_get_day_of_year
+	sca_jd_from_day_of_year
+	sca_jd_get_sidereal_time
+	sca_jd_get_centuries_2000
+	sca_jd_get_millenia_2000
+
+	sca_misc_interpolate_three
+	sca_misc_interpolate_five
+
+	sca_moon_update_date
+	sca_moon_get_local_coordinates
+	sca_moon_get_mean_elongation_from_sun
+	sca_moon_get_mean_anomaly
+	sca_moon_get_latitude_argument
+	sca_moon_get_mean_longitude
+	sca_moon_get_mean_longitude_of_ascnode
+
+	sca_planet_data_get
+
+	sca_star_new
+	sca_star_update_date
+	sca_star_get_local_coordinates
+
+	sca_sun_get_mean_longitude
+	sca_sun_get_true_longitude
+	sca_sun_get_mean_anomaly
+	sca_sun_update_date
+	sca_sun_get_local_coordinates
