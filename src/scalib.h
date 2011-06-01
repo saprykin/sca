@@ -31,7 +31,7 @@
  * - compile your application with SCALib library, i.e by adding -lsca and -L&lt;directory&gt;
  *   flag to gcc or using pkg-config: `pkg-config --libs sca`;
  *
- * Note that you need only one scalib.h header, other headers shouldn't be
+ * Note that you need only scalib.h header, other headers shouldn't be
  * included directly into the project.
  *
  * You may also need to specify directory containing SCALib while launching
