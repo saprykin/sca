@@ -2,7 +2,8 @@ SUBDIRS = src
 ACLOCAL_AMFLAGS = -I m4
 
 EXTRA_DIST =			\
-	sca.pc.in
+	sca.pc.in		\
+	Doxyfile
 
 BUILT_SOURCES = stamp-pc-h
 stamp-pc-h: config.status
