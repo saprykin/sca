@@ -61,7 +61,7 @@
 /** Begin of C declaration. */
 #  define SCA_BEGIN_DECLS		extern "C" {
 /** End of C declaration. */
-#  define SCA_END_DECLS			s}
+#  define SCA_END_DECLS			}
 #else
 /** Stumb begin of C declaration. */
 #  define SCA_BEGIN_DECLS
