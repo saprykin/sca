@@ -66,7 +66,7 @@ _sca_star_precess (SCAStar *star, double jd)
 
 	ra = atan2 (A, B) * SCA_ANGLE_RAD_TO_DEG + z;
 
-	/* If start is close to celestial pole */
+	/* If star is close to celestial pole */
 	if (fabs (star->dec2000) > 80.0)
 		dec = acos (sqrt (A * A + B * B)) * SCA_ANGLE_RAD_TO_DEG;
 	else
