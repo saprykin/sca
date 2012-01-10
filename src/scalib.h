@@ -30,8 +30,8 @@
  *   использовать нельзя;
  * - указать компилятору директорию с заголовочными файлами SCALib (используя опцию -I для
  *   компилятора gcc напрямую или с помощью pkg-config: `pkg-config --cflags sca`);
- * - скомпилировать приложение вместе с библиотекой SCALib, (используя опции -lsca и -L&lt;directory&gt;
- *   для gcc напрямую или с помощью pkg-config: `pkg-config --libs sca`;
+ * - скомпилировать приложение вместе с библиотекой SCALib (используя опции -lsca и -L&lt;directory&gt;
+ *   для gcc напрямую или с помощью pkg-config: `pkg-config --libs sca`).
  *
  * Учтите, что подключать в проекте можно только заголовочный файл scalib.h, подключать другие
  * заголовочные файлы библиотеки SCALib напрямую в проекте не следует.
@@ -87,7 +87,7 @@
  * - point compiler for directory with SCALib headers (you can use -I option for gcc
  *   directly or with pkg-config tool: `pkg-config --cflags sca`);
  * - compile your application with SCALib library (you can use -lsca and -L&lt;directory&gt;
- *   options for gcc directly or with pkg-config: `pkg-config --libs sca`;
+ *   options for gcc directly or with pkg-config: `pkg-config --libs sca`).
  *
  * Note that you need only scalib.h header, other SCALib headers shouldn't be
  * included directly into the project.
