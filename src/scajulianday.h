@@ -24,10 +24,10 @@
  *
  * Юлианский день (JD) - это непрерывный отсчёт дней (и их частей) от начала
  * -4712 года. Исторические года до нашей эры начинаются с 0 астрономического
- * года и продолжаются в отрицательную сторону. Библиотека SCA использует
+ * года и продолжаются в отрицательную сторону. Библиотека SCALib использует
  * астрономическое исчисление лет. Например, 1, 5 и 9 года до нашей эры соответствуют
  * 0, -4 и -8 астрономическим годам соответственно. Високосные года могут быть
- * проверены делением на 4 (остаток должен быть 0). Библиотека SCA устанавливает
+ * проверены делением на 4 (остаток должен быть 0). Библиотека SCALib устанавливает
  * 15 октября 1582 года в качестве начала григорианского календаря, хотя календарная
  * реформа была проведена в разных странах в разные года. Все даты используются во
  * всемирном времени (UT). Юлианский день не может быть отрицательным.
@@ -53,10 +53,10 @@
  *
  * The Julian Day (JD) is a continuous count of the days (and its fractions)
  * from the beginning of the -4712 year. Historical B.C. years start from the
- * 0 astronomical year and goes negative. SCA library uses astronomical years
+ * 0 astronomical year and goes negative. SCALib library uses astronomical years
  * notation. For example, 1, 5 and 9 B.C. years corresponds to 0, -4 and -8
  * astronomical years respectively. Leap years can be checked by division of
- * 4 (remainder must be 0). SCA library sets October 15, 1582 as the beginning of 
+ * 4 (remainder must be 0). SCALib library sets October 15, 1582 as the beginning of 
  * Gregorian calendar, though reform was taken at different years in different
  * countries. All dates are specified in Universal Time (UT).
  * JD can't be negative.
