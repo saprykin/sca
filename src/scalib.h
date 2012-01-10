@@ -37,7 +37,7 @@
  * заголовочные файлы библиотеки SCALib напрямую в проекте не следует.
  *
  * Также при запуске приложения может понадобиться указать директорию с библиотекой SCALib.
- * На Linux это можно сделать через переменную окружения LD_LIBRARY_PATH или через /etc/ld.so.conf.
+ * На Linux это можно сделать через переменную окружения LD_LIBRARY_PATH или через ldconfig.
  */
 
 /**
@@ -93,8 +93,7 @@
  * included directly into the project.
  *
  * You may also need to specify directory containing SCALib while launching
- * application. On Linux it can be done using LD_LIBRARY_PATH variable or
- * modifing /etc/ld.so.conf.
+ * application. On Linux it can be done using LD_LIBRARY_PATH variable or ldconfig tool.
  */
 
 /**
