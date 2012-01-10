@@ -136,11 +136,11 @@
 
 #define __SCALIB_H_INSIDE__
 
+#include "scamacros.h"
 #include "scaangle.h"
 #include "scacoordinates.h"
 #include "scaearth.h"
 #include "scajulianday.h"
-#include "scamacros.h"
 #include "scamisc.h"
 #include "scamoon.h"
 #include "scaplanetdata.h"
