@@ -16,12 +16,19 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA.
  */
 
+#ifdef DOXYGEN_RUSSIAN
+/**
+ * @file scamisc.h
+ * @brief Дополнительные функции
+ * @author Александр Сапрыкин
+ */
+#else
 /**
  * @file scamisc.h
  * @brief Miscellaneous functions
  * @author Alexander Saprykin
- *
  */
+#endif
 
 #if !defined (__SCALIB_H_INSIDE__) && !defined (SCALIB_COMPILATION)
 #  error "Header files shouldn't be included directly, consider using <scalib.h> instead."
@@ -36,25 +43,53 @@
 
 SCA_BEGIN_DECLS
 
+#ifdef DOXYGEN_RUSSIAN
+/**
+ * @brief Интерполирует функцию по трём значениям.
+ * @param x Значения по оси абсцисс (аргументы функции). Эти значения ДОЛЖНЫ быть
+ * РАВНОМЕРНО распределены, иначе результаты могут быть не совсем корректными
+ * (с низкой точностью). Предполагается, что значение x[1] - центр интерполяции.
+ * @param y Значения функции в указанных точках по оси абсцисс.
+ * @param xval Значение по оси абсцисс, для которого необходимо провести интерполяцию.
+ * @param y_out Результат интерполяции, выходной.
+ * @return 0 в случае успеха, иначе -1.
+ * @note Все значения @a x ДОЛЖНЫ быть отсортированы по возрастанию.
+ * @since 0.0.1
+ */
+#else
 /**
  * @brief Interpolates the function by three other values.
  * @param x Abscissae (function arguments) values. These values
  * MUST be EQUALLY spaced, or results may be incorrect (with low accuracy).
  * The x[1] value is considered to be the interpolation center.
- * @param y Function values.
+ * @param y Function values for specified abscissae values.
  * @param xval Abscissae value for which function should be interpolated.
  * @param y_out Output interpolated result.
  * @return 0 in case of success, -1 otherwise.
- * @note All the @a x and the corresponding @a y values MUST
- * be sorted in inscreasing order.
+ * @note All the @a x values MUST be sorted in the increasing order.
  * @since 0.0.1
  */
+#endif
 int
 sca_misc_interpolate_three (double	x[3],
 			    double	y[3],
 			    double	xval,
 			    double	*y_out);
 
+#ifdef DOXYGEN_RUSSIAN
+/**
+ * @brief Интерполирует функцию по пяти значениям.
+ * @param x Значения по оси абсцисс (аргументы функции). Эти значения ДОЛЖНЫ быть
+ * РАВНОМЕРНО распределены, иначе результаты могут быть не совсем корректными
+ * (с низкой точностью). Предполагается, что значение x[2] - центр интерполяции.
+ * @param y Значения функции в указанных точках по оси абсцисс.
+ * @param xval Значение по оси абсцисс, для которого необходимо провести интерполяцию.
+ * @param y_out Результат интерполяции, выходной.
+ * @return 0 в случае успеха, иначе -1.
+ * @note Все значения @a x ДОЛЖНЫ быть отсортированы по возрастанию.
+ * @since 0.0.1
+ */
+#else
 /**
  * @brief Interpolates the function by five other values.
  * @param x Abscissae (function arguments) values. These values
@@ -64,10 +99,10 @@ sca_misc_interpolate_three (double	x[3],
  * @param xval Abscissae value for which function should be interpolated.
  * @param y_out Output interpolated result.
  * @return 0 in case of success, -1 otherwise.
- * @note All the @a x and the corresponding @a y values MUST
- * be sorted in inscreasing order.
+ * @note All the @a x values MUST be sorted in the increasing order.
  * @since 0.0.1
  */
+#endif
 int
 sca_misc_interpolate_five (double	x[5],
 			   double	y[5],
