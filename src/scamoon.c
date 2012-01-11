@@ -258,7 +258,7 @@ sca_moon_get_local_coordinates	(SCAMoon *moon, SCAGeoLocation *loc, SCAAngle *A,
 	/* Take parallax into account */
 	sca_earth_get_parallax_equatorial (moon->jd, moon->dst, loc, moon->ra, moon->dec, &d_ra, &d_dec);
 	
-	moon->ra		+= d_ra;
+	moon->ra	+= d_ra;
 	moon->dec	+= d_dec;
 
 	sca_coordinates_equatorial_to_local (moon->jd, loc, moon->ra, moon->dec, A, h);
