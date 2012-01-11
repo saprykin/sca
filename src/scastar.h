@@ -20,7 +20,7 @@
 /**
  * @file scastar.h
  * @brief Представление звезды в виде точки
- * @author Alexander Saprykin
+ * @author Александр Сапрыкин
  *
  * #SCAStar используется для представления звезды в виде точечного объекта. Положение
  * звезды в любой момент времени определяется четырьями параметрами: прямое восхождние (RA)
@@ -243,4 +243,3 @@ int		sca_star_get_local_coordinates	(SCAStar *star, SCAGeoLocation *loc, SCAAngl
 SCA_END_DECLS
 
 #endif /* __SCASTAR_H__ */
-
