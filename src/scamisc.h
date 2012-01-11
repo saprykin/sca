@@ -51,7 +51,7 @@ SCA_BEGIN_DECLS
  * (с низкой точностью). Предполагается, что значение x[1] - центр интерполяции.
  * @param y Значения функции в указанных точках по оси абсцисс.
  * @param xval Значение по оси абсцисс, для которого необходимо провести интерполяцию.
- * @param y_out Результат интерполяции, выходной.
+ * @param[out] y_out Результат интерполяции.
  * @return 0 в случае успеха, иначе -1.
  * @note Все значения @a x ДОЛЖНЫ быть отсортированы по возрастанию.
  * @since 0.0.1
@@ -64,7 +64,7 @@ SCA_BEGIN_DECLS
  * The x[1] value is considered to be the interpolation center.
  * @param y Function values for specified abscissae values.
  * @param xval Abscissae value for which function should be interpolated.
- * @param y_out Output interpolated result.
+ * @param[out] y_out Interpolation result.
  * @return 0 in case of success, -1 otherwise.
  * @note All the @a x values MUST be sorted in the increasing order.
  * @since 0.0.1
@@ -84,7 +84,7 @@ sca_misc_interpolate_three (double	x[3],
  * (с низкой точностью). Предполагается, что значение x[2] - центр интерполяции.
  * @param y Значения функции в указанных точках по оси абсцисс.
  * @param xval Значение по оси абсцисс, для которого необходимо провести интерполяцию.
- * @param y_out Результат интерполяции, выходной.
+ * @param[out] y_out Результат интерполяции.
  * @return 0 в случае успеха, иначе -1.
  * @note Все значения @a x ДОЛЖНЫ быть отсортированы по возрастанию.
  * @since 0.0.1
@@ -97,7 +97,7 @@ sca_misc_interpolate_three (double	x[3],
  * The x[2] value is considered to be the interpolation center.
  * @param y Function values.
  * @param xval Abscissae value for which function should be interpolated.
- * @param y_out Output interpolated result.
+ * @param[out] y_out Interpolation result.
  * @return 0 in case of success, -1 otherwise.
  * @note All the @a x values MUST be sorted in the increasing order.
  * @since 0.0.1

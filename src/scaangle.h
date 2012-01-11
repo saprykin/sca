@@ -20,7 +20,7 @@
 /**
  * @file scaangle.h
  * @brief Работа с углами
- * @author Сапрыкин Александр
+ * @author Александр Сапрыкин
  *
  * Углы могут быть представлены различными способами: градусы/минуты/секунды,
  * часы/минуты/секунды, радианы и т.д.
@@ -189,14 +189,14 @@ typedef double SCAAngle;
 /**
  * @brief Сокращает угол при имеющейся возможности. Например, 480°
  * могут быть сокращены до 120°, или -480° до -120°.
- * @param angle Указатель на угол для сокращения.
+ * @param[in,out] angle Указатель на угол для сокращения.
  * @since 0.0.1
  */
 #else
 /**
  * @brief Reduces angle to minimal value if can. For example, 480°
  * can be reduced to 120°, or -480° to -120°.
- * @param angle Angle pointer to reduce.
+ * @param[in,out] angle Angle pointer to reduce.
  * @since 0.0.1
  */
 #endif
@@ -515,16 +515,16 @@ double		sca_angle_get_cos	(SCAAngle angle);
 /**
  * @brief Рассчитывает синус и косинус угла.
  * @param angle Угол для расчёта синуса и косинуса.
- * @param sin_out Выходное значение для синуса, может быть NULL.
- * @param cos_out Выходное значение для косинуса, может быть NULL.
+ * @param[out] sin_out Выходное значение для синуса, может быть NULL.
+ * @param[out] cos_out Выходное значение для косинуса, может быть NULL.
  * @since 0.0.1
  */
 #else
 /**
  * @brief Calculates both angle's Sine and Cosine.
  * @param angle Angle to calculate Sine and Cosine for.
- * @param sin_out Output Sine value, may be NULL.
- * @param cos_out Output Cosine value, may be NULL.
+ * @param[out] sin_out Output Sine value, may be NULL.
+ * @param[out] cos_out Output Cosine value, may be NULL.
  * @since 0.0.1
  */
 #endif

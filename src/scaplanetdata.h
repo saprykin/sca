@@ -122,7 +122,7 @@ typedef enum _SCAPlanet {
  * @brief Calculates heliocentric planet position and distance to the Sun
  * using VSOP87 planet theory.
  * @param planet Target planet.
- * @param jd Julian Day corresponding to instance of time.
+ * @param jd Julian Day corresponding to calculation instance.
  * @param[out] lon Heliocentric longitude, may be NULL.
  * @param[out] lat Heliocentric latitude, may be NULL.
  * @param[out] dst Distance to the Sun in AUs, may be NULL.

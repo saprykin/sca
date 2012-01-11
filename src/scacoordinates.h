@@ -20,7 +20,7 @@
 /**
  * @file scacoordinates.h
  * @brief Преобразование координат
- * @author Сапрыкин Александр
+ * @author Александр Сапрыкин
  *
  * SCALib использует практически для всех объектов экваториальные координаты. Для их
  * преобразования в эклиптические или местные горизонтальные можно воспользоваться функциями
@@ -68,9 +68,9 @@ SCA_BEGIN_DECLS
  * @param jd Юлианский день, соответствующий времени преобразования.
  * @param ra Прямое восхождение в экваториальных координатах.
  * @param dec Склонение в экваториальных координатах.
- * @param lon Эклиптическая долгота (от точки весеннего равноденствия), выходной, может быть NULL.
- * @param lat Эклиптическая широта (положительная на север от эклиптики, отрицательная на юг),
- * выходной, может быть NULL.
+ * @param[out] lon Эклиптическая долгота (от точки весеннего равноденствия) может быть NULL.
+ * @param[out] lat Эклиптическая широта (положительная на север от эклиптики, отрицательная на юг),
+ * может быть NULL.
  * @return 0 в случае успеха, иначе -1.
  * @since 0.0.1
  */
@@ -80,8 +80,8 @@ SCA_BEGIN_DECLS
  * @param jd Julian Day corresponding to transformation.
  * @param ra Right ascension in equatorial coordinates.
  * @param dec Declination in equatorial coordinates.
- * @param lon Ecliptical longitude (measured from vernal equinox), output, may be NULL.
- * @param lat Ecliptical latitude (positive north of ecliptic, negative south), output, may be NULL.
+ * @param[out] lon Ecliptical longitude (measured from vernal equinox), may be NULL.
+ * @param[out] lat Ecliptical latitude (positive north of ecliptic, negative south), may be NULL.
  * @return 0 in case of success, -1 otherwise.
  * @since 0.0.1
  */
@@ -94,8 +94,8 @@ int sca_coordinates_equatorial_to_ecliptic	(double jd, SCAAngle ra, SCAAngle dec
  * @param jd Юлианский день, соответствующий времени преобразования.
  * @param lon Эклиптическая долгота (от точки весеннего равноденствия).
  * @param lat Эклиптическая широта (положительная на север от эклиптики, отрицательная на юг).
- * @param ra Прямое восхождение в экваториальных координатах, выходной, может быть NULL.
- * @param dec Склонение в экваториальных координатах, выходной, может быть NULL.
+ * @param[out] ra Прямое восхождение в экваториальных координатах, может быть NULL.
+ * @param[out] dec Склонение в экваториальных координатах, может быть NULL.
  * @return 0 в случае успеха, иначе -1.
  * @since 0.0.1
  */
@@ -105,8 +105,8 @@ int sca_coordinates_equatorial_to_ecliptic	(double jd, SCAAngle ra, SCAAngle dec
  * @param jd Julian Day corresponding to transformation.
  * @param lon Ecliptical longitude (measured from vernal equinox).
  * @param lat Ecliptical latitude (positive north of ecliptic, negative south).
- * @param ra Right ascension in equatorial coordinates, output, may be NULL.
- * @param dec Declination in equatorial coordinates, output, may be NULL.
+ * @param[out] ra Right ascension in equatorial coordinates, may be NULL.
+ * @param[out] dec Declination in equatorial coordinates, may be NULL.
  * @return 0 in case of success, -1 otherwise.
  * @since 0.0.1
  */
@@ -120,8 +120,8 @@ int sca_coordinates_ecliptic_to_equatorial	(double jd, SCAAngle lon, SCAAngle la
  * @param loc Положение наблюдателя.
  * @param ra Прямое восхождение в экваториальных координатах.
  * @param dec Склонение в экваториальных координатах.
- * @param A Выходной азимут (положительный на запад от юга), может быть NULL.
- * @param h Выходная высота над горизонтом, может быть NULL.
+ * @param[out] A Азимут (положительный на запад от юга), может быть NULL.
+ * @param[out] h Высота над горизонтом, может быть NULL.
  * @return 0 в случае успеха, иначе -1.
  * @since 0.0.1
  */
@@ -132,8 +132,8 @@ int sca_coordinates_ecliptic_to_equatorial	(double jd, SCAAngle lon, SCAAngle la
  * @param loc Location of the observer.
  * @param ra Right ascension in equatorial coordinates.
  * @param dec Declination in equatorial coordinates.
- * @param A Output azimuth (positive westwards from south), may be NULL.
- * @param h Output altitude above horizon, may be NULL.
+ * @param[out] A Azimuth (positive westwards from south), may be NULL.
+ * @param[out] h Altitude above horizon, may be NULL.
  * @return 0 in case of success, -1 otherwise.
  * @since 0.0.1
  */

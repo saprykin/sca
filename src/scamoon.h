@@ -127,9 +127,9 @@ typedef struct _SCAMoon {
 #ifdef DOXYGEN_RUSSIAN
 	/** Текущее расстояние до Земли (в АЕ).			*/
 #else
-	/** Current distance to the Earth (in AU).		*/
+	/** Current distance to the Earth (in AUs).		*/
 #endif
-	double		dst;	/**< 		*/
+	double		dst;
 } SCAMoon;
 
 
@@ -137,15 +137,15 @@ typedef struct _SCAMoon {
 /**
  * @brief Рассчитывает среднюю элонгацию между Луной и Солнцем.
  * @param jd Юлианский день, соответствующий времени расчёта.
- * @param elong Средняя элонгация, выходной.
+ * @param[out] elong Средняя элонгация.
  * @return 0 в случае успеха, иначе -1.
  * @since 0.0.1
  */
 #else
 /**
  * @brief Calculates mean elongation of the Moon from the Sun.
- * @param jd Julian Day corresponding to calculation instance of time.
- * @param elong Output mean elongation.
+ * @param jd Julian Day corresponding to calculation instance.
+ * @param[out] elong Mean elongation.
  * @return 0 in case if success, -1 otherwise.
  * @since 0.0.1
  */
@@ -156,15 +156,15 @@ int	sca_moon_get_mean_elongation_from_sun	(double jd, SCAAngle *elong);
 /**
  * @brief Рассчитывает среднюю аномалию Луны.
  * @param jd Юлианский день, соответствующий времени расчёта.
- * @param anom Средняя аномалия, выходной.
+ * @param[out] anom Средняя аномалия.
  * @return 0 в случае успеха, иначе -1.
  * @since 0.0.1
  */
 #else
 /**
  * @brief Calculates mean anomaly of the Moon.
- * @param jd Julian Day corresponding to calculation instance of time.
- * @param anom Output mean anomaly.
+ * @param jd Julian Day corresponding to calculation instance.
+ * @param[out] anom Mean anomaly.
  * @return 0 in case if success, -1 otherwise.
  * @since 0.0.1
  */
@@ -175,15 +175,15 @@ int	sca_moon_get_mean_anomaly		(double jd, SCAAngle *anom);
 /**
  * @brief Рассчитывает среднюю долготу Луны.
  * @param jd Юлианский день, соответствующий времени расчёта.
- * @param lon Средняя долгота, выходной.
+ * @param[out] lon Средняя долгота.
  * @return 0 в случае успеха, иначе -1.
  * @since 0.0.1
  */
 #else
 /**
  * @brief Calculates mean longitude of the Moon.
- * @param jd Julian Day corresponding to calculation instance of time.
- * @param lon Output mean longitude.
+ * @param jd Julian Day corresponding to calculation instance.
+ * @param[out] lon Mean longitude.
  * @return 0 in case if success, -1 otherwise.
  * @since 0.0.1
  */
@@ -194,15 +194,15 @@ int	sca_moon_get_mean_longitude		(double jd, SCAAngle *lon);
 /**
  * @brief Рассчитывает аргумент широты Луны.
  * @param jd Юлианский день, соответствующий времени расчёта.
- * @param arg Аргумент широты, выходной.
+ * @param[out] arg Аргумент широты.
  * @return 0 в случае успеха, иначе -1.
  * @since 0.0.1
  */
 #else
 /**
  * @brief Calculates argument of the latitude of the Moon.
- * @param jd Julian Day corresponding to calculation instance of time.
- * @param arg Output argument of latitude.
+ * @param jd Julian Day corresponding to calculation instance.
+ * @param[out] arg Argument of latitude.
  * @return 0 in case if success, -1 otherwise.
  * @since 0.0.1
  */
@@ -213,15 +213,15 @@ int	sca_moon_get_latitude_argument		(double jd, SCAAngle *arg);
 /**
  * @brief Рассчитывает среднюю долготу восходящего узла Луны.
  * @param jd Юлианский день, соответствующий времени расчёта.
- * @param lon Средняя долгота восходящего узла, выходной.
+ * @param[out] lon Средняя долгота восходящего узла.
  * @return 0 в случае успеха, иначе -1.
  * @since 0.0.1
  */
 #else
 /**
  * @brief Calculates mean longitude of the Moon's ascending node.
- * @param jd Julian Day corresponding to calculation instance of time.
- * @param lon Output mean longitude of the ascending node.
+ * @param jd Julian Day corresponding to calculation instance.
+ * @param[out] lon Mean longitude of the ascending node.
  * @return 0 in case if success, -1 otherwise.
  * @since 0.0.1
  */
@@ -258,8 +258,8 @@ int	sca_moon_update_date			(SCAMoon *moon, SCADate *date);
  * @brief Рассчитывает местные координаты Луны с учётом параллакса.
  * @param moon Объект #SCAMoon.
  * @param loc Положение наблюдателя.
- * @param A Выходной азимут (положительный на запад от юга), может быть NULL.
- * @param h Выходная высота над горизонтом, может быть NULL.
+ * @param[out] A Азимут (положительный на запад от юга), может быть NULL.
+ * @param[out] h Высота над горизонтом, может быть NULL.
  * @return 0 в случае успеха, иначе -1.
  * @since 0.0.1
  * @note Для учёта рефракции используйте функцию sca_earth_get_refraction().
@@ -271,8 +271,8 @@ int	sca_moon_update_date			(SCAMoon *moon, SCADate *date);
  * @brief Calculates local coordinates of the Moon including parallax corrections.
  * @param moon #SCAMoon object.
  * @param loc Observer location.
- * @param A Output azimuth (positive westward from south), may be NULL.
- * @param h Output altitude above horizon, may be NULL.
+ * @param[out] A Azimuth (positive westward from south), may be NULL.
+ * @param[out] h Altitude above horizon, may be NULL.
  * @return 0 in case if success, -1 otherwise.
  * @since 0.0.1
  * @note To take in account refraction use sca_earth_get_refraction() routine.

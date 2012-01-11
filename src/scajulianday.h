@@ -302,7 +302,7 @@ double		sca_jd_from_calendar_date	(SCADate *date);
 /**
  * @brief Преобразует юлианский день в каледарную дату.
  * @param jd Юлианский день для преобразования.
- * @param date Структура #SCADate для выходного результата.
+ * @param[out] date Структура #SCADate для выходного результата.
  * @return 0 в случае успеха, -1, если @a date равен NULL, или @a jd
  * отрицателен.
  * @since 0.0.1
@@ -313,7 +313,7 @@ double		sca_jd_from_calendar_date	(SCADate *date);
 /**
  * @brief Converts Julian Day to calendar date.
  * @param jd Julian Day to convert.
- * @param date #SCADate structure to hold the result.
+ * @param[out] date #SCADate structure to hold the result.
  * @return 0 in case of success, -1 if @a date is NULL or @a jd
  * is negative.
  * @since 0.0.1
@@ -327,7 +327,7 @@ int		sca_jd_to_calendar_date		(double jd, SCADate *date);
 /**
  * @brief Определяет день недели, на который приходится юлианский день.
  * @param jd Юлианский день для определения дня недели.
- * @param weekday День недели, выходной параметр.
+ * @param[out] weekday День недели.
  * @return 0 в случае успеха, -1, если @a weekday равен NULL, или @a jd
  * отрицателен.
  * @since 0.0.1
@@ -336,7 +336,7 @@ int		sca_jd_to_calendar_date		(double jd, SCADate *date);
 /**
  * @brief Determines the week day of the given Julian Day.
  * @param jd Julian Day to get week day for.
- * @param weekday Output parameter for holding the result.
+ * @param[out] weekday Day of the week.
  * @return 0 in case of success, -1 if @a weekday is NULL or @a jd
  * is negative.
  * @since 0.0.1
@@ -390,7 +390,7 @@ double		sca_jd_from_day_of_year		(int year, int num);
 /**
  * @brief Рассчитывает гринвичское истинное звёздное время.
  * @param jd Юлианский день для расчёта.
- * @param sidereal Звёздное время, выходной.
+ * @param[out] sidereal Звёздное время.
  * @return 0 в случае успеха, иначе -1.
  * @since 0.0.1
  */
@@ -398,7 +398,7 @@ double		sca_jd_from_day_of_year		(int year, int num);
 /**
  * @brief Calculates apparent sidereal at Greenwich.
  * @param jd Julian Day for calculation.
- * @param sidereal Output sidereal time.
+ * @param[out] sidereal Sidereal time.
  * @return 0 in case of success, -1 otherwise.
  * @since 0.0.1
  */

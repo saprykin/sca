@@ -69,7 +69,7 @@ typedef struct _SCAGeoLocation {
 /**
  * @brief Рассчитывает угол наклона эклиптики.
  * @param jd Юлианский день, соответствующий времени расчёта.
- * @param obl Наклон эклиптики, выходной.
+ * @param[out] obl Наклон эклиптики.
  * @return 0 в случае успеха, иначе -1.
  * @since 0.0.1
  */
@@ -77,7 +77,7 @@ typedef struct _SCAGeoLocation {
 /**
  * @brief Calculates the obliquity of the ecliptic.
  * @param jd Julian Day corresponding to calculation instance.
- * @param obl Output obliquity.
+ * @param[out] obl Obliquity.
  * @return 0 in case of success, -1 otherwise.
  * @since 0.0.1
  */
@@ -88,8 +88,8 @@ int		sca_earth_get_ecliptic_obliquity	(double jd, SCAAngle *obl);
 /**
  * @brief Рассчитывает нутацию Земли по долготе и наклону эклиптики.
  * @param jd Юлианский день, соответствующий времени расчёта.
- * @param nut Нутация по долготе, выходной, может быть NULL.
- * @param obl Нутация по наклону эклиптики, выходной, может быть NULL.
+ * @param[out] nut Нутация по долготе, может быть NULL.
+ * @param[out] obl Нутация по наклону эклиптики, может быть NULL.
  * @return 0 в случае успеха, иначе -1.
  * @since 0.0.1
  */
@@ -97,8 +97,8 @@ int		sca_earth_get_ecliptic_obliquity	(double jd, SCAAngle *obl);
 /**
  * @brief Calculates Earth's nutation in longitude and obliquity.
  * @param jd Julian Day corresponding to calculation instance.
- * @param nut Output nutation in longitude, may be NULL.
- * @param obl Output nutation in obliquity, may be NULL.
+ * @param[out] nut Nutation in longitude, may be NULL.
+ * @param[out] obl Nutation in obliquity, may be NULL.
  * @return 0 in case if success, -1 otherwise.
  * @since 0.0.1
  */
@@ -132,8 +132,8 @@ SCAAngle	sca_earth_get_refraction		(SCAAngle h);
  * @param loc Положение наблюдателя.
  * @param ra Прямое восхождение объекта.
  * @param dec Склонение объекта.
- * @param d_ra Параллакс прямого восхождения, выходной, может быть NULL.
- * @param d_dec Параллакс склонения, выходной, может быть NULL.
+ * @param[out] d_ra Параллакс прямого восхождения, может быть NULL.
+ * @param[out] d_dec Параллакс склонения, может быть NULL.
  * @return 0 в случае успеха, иначе -1.
  * @since 0.0.1
  */
@@ -146,8 +146,8 @@ SCAAngle	sca_earth_get_refraction		(SCAAngle h);
  * @param loc Location of the observer.
  * @param ra Object's right ascension.
  * @param dec Object's declination.
- * @param d_ra Output right ascension parallax, may be NULL.
- * @param d_dec Output declination parallax, may be NULL.
+ * @param[out] d_ra Right ascension parallax, may be NULL.
+ * @param[out] d_dec Declination parallax, may be NULL.
  * @return 0 in case if success, -1 otherwise.
  * @since 0.0.1
  */
@@ -164,7 +164,7 @@ int		sca_earth_get_parallax_equatorial	(double		jd,
 /**
  * @brief Рассчитывает эксцентриситет орбиты Земли для заданного момента времени.
  * @param jd Юлианский день, соответствующий времени расчёта.
- * @param e Эксцентриситет, выходной.
+ * @param[out] e Эксцентриситет.
  * @return 0 в случае успеха, иначе -1.
  * @since 0.0.1
  */
@@ -172,7 +172,7 @@ int		sca_earth_get_parallax_equatorial	(double		jd,
 /**
  * @brief Calculates Earth's orbit eccentricity for given instance of time.
  * @param jd Julian Day corresponding to calculation instance.
- * @param e Output eccentricity.
+ * @param[out] e Eccentricity.
  * @return 0 in case of success, -1 otherwise.
  * @since 0.0.1
  */
@@ -199,7 +199,7 @@ SCAAngle	sca_earth_get_aberration_constant	(void);
  * @brief Рассчитывает аргумент перицентра орбиты Земли для заданного момента
  * времени.
  * @param jd Юлианский день, соответствующий времени расчёта.
- * @param pi Аргумент перицентра, выходной.
+ * @param[out] pi Аргумент перицентра.
  * @return 0 в случае успеха, иначе -1.
  * @since 0.0.1
  */
@@ -208,7 +208,7 @@ SCAAngle	sca_earth_get_aberration_constant	(void);
  * @brief Calculates Earth's orbit perihelion longitude for
  * given instance of time.
  * @param jd Julian Day corresponding to calculation instance.
- * @param pi Output perihelion.
+ * @param[out] pi Perihelion.
  * @return 0 in case of success, -1 otherwise.
  * @since 0.0.1
  */
