@@ -58,6 +58,7 @@ RECURSIVE              = YES
 # certain files from those directories.
 
 EXCLUDE_PATTERNS       = Makefile.* scaprivate.h
+EXCLUDE_SYMBOLS        = _*
                          
 
 # The EXAMPLE_PATH tag can be used to specify one or more files or 
