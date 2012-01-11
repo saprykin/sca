@@ -6,7 +6,7 @@
 PROJECT_NAME           = SCALib
 PROJECT_NUMBER         = 0.0.1
 OUTPUT_DIRECTORY       = doc
-OUTPUT_LANGUAGE        = English
+OUTPUT_LANGUAGE        = Russian
 EXTRACT_ALL            = NO
 EXTRACT_PRIVATE        = NO
 EXTRACT_STATIC         = NO
@@ -144,7 +144,8 @@ INCLUDE_PATH           =
 INCLUDE_FILE_PATTERNS  = 
 PREDEFINED             = "SCA_BEGIN_DECLS=" 			\
 			 "SCA_END_DECLS=" 			\
-			 "DOXYGEN_SHOULD_SKIP_THIS"
+			 "DOXYGEN_SHOULD_SKIP_THIS"		\
+			 "DOXYGEN_RUSSIAN"
 SKIP_FUNCTION_MACROS   = YES
 #---------------------------------------------------------------------------
 # Configuration::addtions related to external references   
