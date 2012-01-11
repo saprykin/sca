@@ -235,6 +235,9 @@ int	sca_moon_get_mean_longitude_of_ascnode	(double jd, SCAAngle *lon);
  * @param date Дата в UT для выполнения расчёта.
  * @return 0 в случае успеха, иначе -1.
  * @since 0.0.1
+ *
+ * Данная функция обновляет информацию о положении Луны в объекте @a moon,
+ * поэтому ее можно вызывать последовательно с новой датой.
  */
 #else
 /**
@@ -243,6 +246,9 @@ int	sca_moon_get_mean_longitude_of_ascnode	(double jd, SCAAngle *lon);
  * @param date Date in UT to perform calculation for.
  * @return 0 in case of success, -1 otherwise.
  * @since 0.0.1
+ *
+ * This function updates internal data in @a moon object, so you can
+ * call it continuosly with the new dates.
  */
 #endif
 int	sca_moon_update_date			(SCAMoon *moon, SCADate *date);
