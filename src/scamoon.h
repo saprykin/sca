@@ -248,7 +248,7 @@ int	sca_moon_get_mean_longitude_of_ascnode	(double jd, SCAAngle *lon);
  * @since 0.0.1
  *
  * This function updates internal data in @a moon object, so you can
- * call it continuosly with the new dates.
+ * call it continuously with the new dates.
  */
 #endif
 int	sca_moon_update_date			(SCAMoon *moon, SCADate *date);
