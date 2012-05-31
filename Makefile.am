@@ -1,5 +1,4 @@
 SUBDIRS = src
-ACLOCAL_AMFLAGS = -I m4
 
 EXTRA_DIST =			\
 	sca.pc.in		\
@@ -15,4 +14,3 @@ pkgconfig_DATA = sca.pc
 $(pkgconfig_DATA): config.status
 
 DISTCLEANFILES = stamp-pc-h
-
