@@ -58,7 +58,3 @@
 #if defined (_MSC_VER) && !defined (_USE_MATH_DEFINES)
 #  define _USE_MATH_DEFINES
 #endif /* _MSC_VER && _USE_MATH_DEFINES */
-
-#if defined (_MSC_VER) && !defined (trunc)
-#  define trunc(x) ((double)((__int64) (x)))
-#endif /* _MSC_VER && trunc */

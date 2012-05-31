@@ -18,6 +18,38 @@
 
 #include <scamisc.h>
 
+#ifndef HAVE_TRUNC_DECL
+#  include <math.h>
+#  include <float.h>
+
+#  define MANT_DIG LDBL_MANT_DIG
+#  define L_(literal) literal##L
+
+/* -0.0 */
+#  if defined (__hpux) || defined (__sgi) || defined (__ICC)
+#    define MINUS_ZERO (-MIN * MIN)
+#  else
+#    define MINUS_ZERO L_(-0.0)
+
+/* 2^(MANT_DIG-1).  */
+static const double TWO_MANT_DIG =
+	/* Assume MANT_DIG <= 5 * 31.
+	Use the identity
+	n = floor(n/5) + floor((n+1)/5) + ... + floor((n+4)/5).  */
+	(double) (1U << ((MANT_DIG - 1) / 5)) *
+	(double) (1U << ((MANT_DIG - 1 + 1) / 5)) *
+	(double) (1U << ((MANT_DIG - 1 + 2) / 5)) *
+	(double) (1U << ((MANT_DIG - 1 + 3) / 5)) *
+	(double) (1U << ((MANT_DIG - 1 + 4) / 5));
+#endif
+
+/* MSVC with option -fp:strict refuses to compile constant initializers that
+   contain floating-point operations. Pacify this compiler.  */
+#  ifdef _MSC_VER
+#    pragma fenv_access (off)
+#  endif
+#endif /* !HAVE_TRUNC_DECL */
+
 int
 sca_misc_interpolate_three (double	x[3],
 			    double	y[3],
@@ -112,3 +144,49 @@ sca_misc_interpolate_five (double	x[5],
 	return 0;
 }
 
+#ifndef HAVE_TRUNC_DECL
+double
+trunc (double x)
+{
+	/* The use of 'volatile' guarantees that excess precision bits are dropped
+	at each addition step and before the following comparison at the caller's
+	site.  It is necessary on x86 systems where double-floats are not IEEE
+	compliant by default, to avoid that the results become platform and compiler
+	option dependent.  'volatile' is a portable alternative to gcc's
+	-ffloat-store option. */
+	volatile double y = x;
+	volatile double z = y;
+
+	if (z > L_(0.0)) {
+		/* For 0 < x < 1, return +0.0 even if the current rounding mode is
+		FE_DOWNWARD. */
+		if (z < L_(1.0))
+			z = L_(0.0);
+		/* Avoid rounding errors for values near 2^k, where k >= MANT_DIG-1. */
+		else if (z < TWO_MANT_DIG) {
+			/* Round to the next integer (nearest or up or down, doesn't matter). */
+			z += TWO_MANT_DIG;
+			z -= TWO_MANT_DIG;
+			/* Enforce rounding down. */
+			if (z > y)
+				z -= L_(1.0);
+		}
+	} else if (z < L_(0.0)) {
+		/* For -1 < x < 0, return -0.0 regardless of the current rounding
+		mode. */
+		if (z > L_(-1.0))
+			z = MINUS_ZERO;
+		/* Avoid rounding errors for values near -2^k, where k >= MANT_DIG-1. */
+		else if (z > - TWO_MANT_DIG) {
+			/* Round to the next integer (nearest or up or down, doesn't matter). */
+			z -= TWO_MANT_DIG;
+			z += TWO_MANT_DIG;
+			/* Enforce rounding up. */
+			if (z < y)
+				z += L_(1.0);
+		}
+	}
+
+	return z;
+}
+#endif /* !HAVE_TRUNC_DECL */

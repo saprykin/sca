@@ -28,6 +28,12 @@ dnl AC_CHECK_HEADERS([stdio.h fcntl.h sys/socket.h netinet/in.h errno.h arpa/ine
 SCA_CFLAGS="-D_REENTRANT -D_PTHREADS -D_POSIX4_DRAFT_SOURCE -D_POSIX4A_DRAFT10_SOURCE -U_OSF_SOURCE -D_THREAD_SAFE"
 SCA_LIBS="-lm"
 
+dnl Test whether trunc() is declared.
+AC_CHECK_DECLS([trunc], , , [#include <math.h>])
+if test "x$ac_cv_have_decl_trunc" = xyes; then
+	AC_DEFINE(HAVE_TRUNC_DECL, 1, [define if system has trunc function declared])
+fi
+
 AC_SUBST(SCA_LIBS)
 AC_SUBST(SCA_CFLAGS)
 

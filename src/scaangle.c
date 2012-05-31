@@ -22,6 +22,7 @@
 #include <math.h>
 
 #include "scaangle.h"
+#include "scamisc.h"
 
 void
 sca_angle_reduce (SCAAngle *angle)

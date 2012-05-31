@@ -279,7 +279,7 @@ typedef struct _SCADate {
  * @since 0.0.1
  *
  * Если необходимо преобразовать дату с учетом суточного времени, то надо
- * установить поле #SCADate.day с учётом дробной части. Для этого лучше использовать
+ * установить поле @a day в #SCADate с учётом дробной части. Для этого лучше использовать
  * макрос #SCA_DAYS_FROM_TIME, который преобразует время из формата чч:мм:сс (24-часовая
  * запись) в соответствующую часть дня.
  */
@@ -291,7 +291,7 @@ typedef struct _SCADate {
  * @since 0.0.1
  *
  * If you need to convert date with corresponding time, you should
- * set #SCADate.day field with decimals. Consider using #SCA_DAYS_FROM_TIME
+ * set @a day field in #SCADate with decimals. Consider using #SCA_DAYS_FROM_TIME
  * macros to convert time from hh:mm:ss (24h notation) format to the
  * days value.
  */

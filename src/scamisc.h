@@ -37,6 +37,8 @@
 #ifndef __SCAMISC_H__
 #define __SCAMISC_H__
 
+#include "config.h"
+
 #include <math.h>
 
 #include <scamacros.h>
@@ -108,6 +110,12 @@ sca_misc_interpolate_five (double	x[5],
 			   double	y[5],
 			   double	xval,
 			   double	*y_out);
+
+#ifndef HAVE_TRUNC_DECL
+/* Implementation of system-lack function */
+double
+trunc (double x);
+#endif
 
 SCA_END_DECLS
 

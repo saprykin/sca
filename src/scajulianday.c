@@ -23,6 +23,7 @@
 
 #include <scajulianday.h>
 #include <scaearth.h>
+#include <scamisc.h>
 
 static int
 _sca_jd_is_gregorian_date (SCADate	*date)
