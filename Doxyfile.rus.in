@@ -32,7 +32,7 @@ PROJECT_NAME           = SCALib
 # This could be handy for archiving the generated documentation or 
 # if some version control system is used.
 
-PROJECT_NUMBER         = 0.0.1
+PROJECT_NUMBER         = @SCALIB_VERSION@
 
 # Using the PROJECT_BRIEF tag one can provide an optional one line description 
 # for a project that appears at the top of each page and should give viewer 
@@ -74,7 +74,7 @@ CREATE_SUBDIRS         = NO
 # Polish, Portuguese, Romanian, Russian, Serbian, Serbian-Cyrillic, Slovak, 
 # Slovene, Spanish, Swedish, Ukrainian, and Vietnamese.
 
-OUTPUT_LANGUAGE        = English
+OUTPUT_LANGUAGE        = Russian
 
 # If the BRIEF_MEMBER_DESC tag is set to YES (the default) Doxygen will 
 # include brief member descriptions after the members that are listed in 
@@ -194,7 +194,7 @@ SEPARATE_MEMBER_PAGES  = NO
 # The TAB_SIZE tag can be used to set the number of spaces in a tab. 
 # Doxygen uses this value to replace tabs by spaces in code fragments.
 
-TAB_SIZE               = 6
+TAB_SIZE               = 8
 
 # This tag can be used to specify a number of aliases that acts 
 # as commands in the documentation. An alias has the form "name=value". 
@@ -1486,7 +1486,8 @@ INCLUDE_FILE_PATTERNS  =
 
 PREDEFINED             = "SCA_BEGIN_DECLS=" \
                          "SCA_END_DECLS=" \
-                         "DOXYGEN_SHOULD_SKIP_THIS"
+                         "DOXYGEN_SHOULD_SKIP_THIS" \
+                         "DOXYGEN_RUSSIAN"
 
 # If the MACRO_EXPANSION and EXPAND_ONLY_PREDEF tags are set to YES then 
 # this tag can be used to specify a list of macro names that should be expanded. 
