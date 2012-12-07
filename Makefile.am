@@ -1,9 +1,5 @@
 SUBDIRS = src
 
-EXTRA_DIST =			\
-	sca.pc.in		\
-	Doxyfile
-
 BUILT_SOURCES = stamp-pc-h
 stamp-pc-h: config.status
 	echo timestamp > stamp-pc-h

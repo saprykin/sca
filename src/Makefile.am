@@ -1,6 +1,8 @@
 AM_CPPFLAGS = \
 	-DSCALIB_COMPILATION
 
+EXTRA_DIST = scaprivate.h
+
 lib_LTLIBRARIES = libsca.la
 
 libsca_la_SOURCES =		\
