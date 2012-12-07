@@ -102,6 +102,6 @@ else
 	AC_MSG_ERROR([*** pkg-config too old; version 0.16 or better required.])
 fi
 
-AC_CONFIG_FILES([Makefile src/Makefile sca.pc Doxyfile Doxyfile.rus])
+AC_CONFIG_FILES([Makefile src/Makefile sca.pc sca-uninstalled.pc Doxyfile Doxyfile.rus])
 AC_OUTPUT
 
