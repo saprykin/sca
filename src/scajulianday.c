@@ -26,7 +26,7 @@
 #include <scamisc.h>
 
 static int
-_sca_jd_is_gregorian_date (SCADate	*date)
+_sca_jd_is_gregorian_date (const SCADate *date)
 {
 	if (date->year > 1582)
 		return 1;
@@ -43,7 +43,7 @@ _sca_jd_is_gregorian_date (SCADate	*date)
 }
 
 double
-sca_jd_from_calendar_date (SCADate	*date)
+sca_jd_from_calendar_date (const SCADate *date)
 {
 	int	Y, M;
 	int	A, B;
@@ -130,7 +130,7 @@ sca_jd_get_weekday (double	jd,
 }
 
 int
-sca_jd_get_day_of_year (double	jd)
+sca_jd_get_day_of_year (double jd)
 {
 	SCADate		date;
 	int		K;
@@ -175,7 +175,8 @@ sca_jd_from_day_of_year (int	year,
 }
 
 int
-sca_jd_get_sidereal_time (double jd, SCAAngle *sidereal)
+sca_jd_get_sidereal_time (double	jd,
+			  SCAAngle	*sidereal)
 {
 	double		t;
 	SCAAngle	theta0, nut = 0, obl = 0;

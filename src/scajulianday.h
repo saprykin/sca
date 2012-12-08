@@ -296,7 +296,7 @@ typedef struct _SCADate {
  * days value.
  */
 #endif
-double		sca_jd_from_calendar_date	(SCADate *date);
+double		sca_jd_from_calendar_date	(const SCADate *date);
 
 #ifdef DOXYGEN_RUSSIAN
 /**
