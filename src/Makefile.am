@@ -30,6 +30,9 @@ scainclude_HEADERS = 		\
 	scastar.h		\
 	scasun.h
 
+EXTRA_DIST =			\
+	CMakeLists.txt
+
 libsca_la_LIBADD=@SCA_LIBS@
 libsca_la_CFLAGS=@SCA_CFLAGS@
 
