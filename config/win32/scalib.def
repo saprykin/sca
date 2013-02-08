@@ -1,4 +1,4 @@
-LIBRARY		scalib
+LIBRARY		sca
 VERSION		0.0.1
 EXPORTS
 	sca_angle_reduce
