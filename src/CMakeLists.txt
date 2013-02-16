@@ -1,7 +1,11 @@
 set(INSTALL_LIB_DIR ${CMAKE_INSTALL_PREFIX}/lib CACHE PATH "Installation directory for libraries")
 set(INSTALL_INC_DIR ${CMAKE_INSTALL_PREFIX}/include CACHE PATH "Installation directory for headers")
 
-include_directories(${CMAKE_BINARY_DIR} ${PROJECT_SOURCE_DIR} ${PROJECT_SOURCE_DIR}/src ${PROJECT_SOURCE_DIR}/config/win32)
+include_directories(${CMAKE_BINARY_DIR}
+		    ${PROJECT_SOURCE_DIR}
+		    ${PROJECT_SOURCE_DIR}/src
+		    ${PROJECT_SOURCE_DIR}/config/win32
+)
 
 set(SCALIB_PUBLIC_HDRS
 	scaangle.h
@@ -45,13 +49,9 @@ endif()
 set_target_properties(sca PROPERTIES SOVERSION ${VERSION})
 set_target_properties(scastatic PROPERTIES SOVERSION ${VERSION})
 
-if(NOT SKIP_INSTALL_LIBRARIES AND NOT SKIP_INSTALL_ALL)
-	install(TARGETS sca scastatic
+install(TARGETS sca scastatic
     	RUNTIME DESTINATION ${INSTALL_BIN_DIR}
     	ARCHIVE DESTINATION ${INSTALL_LIB_DIR
     	LIBRARY DESTINATION ${INSTALL_LIB_DIR}
 )
-endif()
-if(NOT SKIP_INSTALL_HEADERS AND NOT SKIP_INSTALL_ALL)
-    install(FILES ${SCALIB_PUBLIC_HDRS} DESTINATION ${INSTALL_INC_DIR})
-endif()
+install(FILES ${SCALIB_PUBLIC_HDRS} DESTINATION ${INSTALL_INC_DIR})
