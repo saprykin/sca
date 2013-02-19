@@ -1,7 +1,10 @@
 AM_CPPFLAGS = \
 	-DSCALIB_COMPILATION
 
-EXTRA_DIST = scaprivate.h
+EXTRA_DIST = \
+	scaprivate.h		\
+	CMakeLists.txt
+
 
 lib_LTLIBRARIES = libsca.la
 
@@ -29,9 +32,6 @@ scainclude_HEADERS = 		\
 	scaplanetdata.h		\
 	scastar.h		\
 	scasun.h
-
-EXTRA_DIST =			\
-	CMakeLists.txt
 
 libsca_la_LIBADD=@SCA_LIBS@
 libsca_la_CFLAGS=@SCA_CFLAGS@
