@@ -1,6 +1,3 @@
-set(INSTALL_LIB_DIR ${CMAKE_INSTALL_PREFIX}/lib CACHE PATH "Installation directory for libraries")
-set(INSTALL_INC_DIR ${CMAKE_INSTALL_PREFIX}/include CACHE PATH "Installation directory for headers")
-
 include_directories(${CMAKE_BINARY_DIR}
 		    ${PROJECT_SOURCE_DIR}
 		    ${PROJECT_SOURCE_DIR}/src
@@ -46,12 +43,35 @@ if(MSVC)
 	add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 endif()
 
-set_target_properties(sca PROPERTIES SOVERSION ${VERSION})
-set_target_properties(scastatic PROPERTIES SOVERSION ${VERSION})
+set_target_properties(sca PROPERTIES SOVERSION ${SCA_VERSION})
+set_target_properties(scastatic PROPERTIES SOVERSION ${SCA_VERSION})
+
+install(TARGETS sca scastatic EXPORT sca-targets
+	DESTINATION bin
+    	RUNTIME DESTINATION bin
+	COMPONENT Core
+)
 
 install(TARGETS sca scastatic
-    	RUNTIME DESTINATION ${INSTALL_BIN_DIR}
-    	ARCHIVE DESTINATION ${INSTALL_LIB_DIR
-    	LIBRARY DESTINATION ${INSTALL_LIB_DIR}
+	DESTINATION lib
+    	ARCHIVE DESTINATION lib
+	COMPONENT Core
 )
-install(FILES ${SCALIB_PUBLIC_HDRS} DESTINATION ${INSTALL_INC_DIR})
+install(TARGETS sca scastatic
+	DESTINATION lib
+    	LIBRARY DESTINATION lib
+	COMPONENT Core
+)
+
+install(FILES ${SCALIB_PUBLIC_HDRS}
+	DESTINATION include
+	COMPONENT Core
+)
+
+set(CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS_SKIP TRUE)
+include(InstallRequiredSystemLibraries)
+
+install(PROGRAMS ${CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS} 
+	DESTINATION bin
+	COMPONENT Core
+)
