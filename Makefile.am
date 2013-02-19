@@ -1,11 +1,15 @@
 SUBDIRS = src
 
-EXTRA_DIST =			\
-	sca.pc.in		\
-	Doxyfile		\
-	CMakeLists.txt		\
-	config/win32/config.h	\
-	config/win32/scalib.def
+EXTRA_DIST =	\
+	sca.pc.in				\
+	Doxyfile				\
+	CMakeLists.txt				\
+	config/win32/config.h			\
+	config/win32/scalib.def			\
+	cmake\CMakeLists.txt			\
+	cmake\sca-config-version.cmake.in	\
+	cmake\sca-config.cmake.in		\
+	cmake\FindSCA.cmake
 
 BUILT_SOURCES = stamp-pc-h
 stamp-pc-h: config.status
