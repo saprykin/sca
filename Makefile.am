@@ -1,5 +1,8 @@
 SUBDIRS = src
 
+uninstall-local:
+	rm -rf $(DESTDIR)$(includedir)/sca
+
 EXTRA_DIST =	\
 	sca.pc.in				\
 	Doxyfile				\
