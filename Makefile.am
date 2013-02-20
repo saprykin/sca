@@ -23,4 +23,7 @@ pkgconfig_DATA = sca.pc
 
 $(pkgconfig_DATA): config.status
 
-DISTCLEANFILES = stamp-pc-h
+DISTCLEANFILES = stamp-pc-h Doxyfile
+
+distclean-local:
+	cd $(top_builddir) && rm -rf doc
