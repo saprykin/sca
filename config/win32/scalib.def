@@ -1,5 +1,4 @@
 LIBRARY		sca
-VERSION		0.0.1
 EXPORTS
 	sca_angle_reduce
 	sca_angle_from_degrees
