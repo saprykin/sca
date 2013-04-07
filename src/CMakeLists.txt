@@ -64,7 +64,7 @@ install(TARGETS sca scastatic
 )
 
 install(FILES ${SCALIB_PUBLIC_HDRS}
-	DESTINATION include
+	DESTINATION include/SCA
 	COMPONENT Core
 )
 
