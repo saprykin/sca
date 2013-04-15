@@ -16,7 +16,9 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA.
  */
 
-#include "config.h"
+#ifndef HAVE_TRUNC_DECL
+  extern double trunc (double x);
+#endif
 
 #include <stdlib.h>
 #include <math.h>

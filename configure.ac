@@ -76,7 +76,6 @@ AM_PROG_LIBTOOL
 
 dnl Check header files
 AC_HEADER_STDC
-dnl AC_CHECK_HEADERS([stdio.h fcntl.h sys/socket.h netinet/in.h errno.h arpa/inet.h])
 
 SCA_CFLAGS="-D_REENTRANT -D_PTHREADS -D_POSIX4_DRAFT_SOURCE -D_POSIX4A_DRAFT10_SOURCE -U_OSF_SOURCE -D_THREAD_SAFE"
 SCA_LIBS="-lm"

@@ -6,10 +6,6 @@ set (SCA_VERSION_PATCH 1)
 set (SCA_VERSION ${SCA_VERSION_MAJOR}.${SCA_VERSION_MINOR}.${SCA_VERSION_PATCH})
 set (SCALIB_VERSION ${SCA_VERSION})
 
-if(!MSVC)
-	message(FATAL_ERROR "CMake build system is only available for Windows (MSVC) targets")
-endif()
-
 configure_file (
 	"${PROJECT_SOURCE_DIR}/Doxyfile.in"
 	"${PROJECT_BINARY_DIR}/Doxyfile"
@@ -30,5 +26,11 @@ set (CPACK_COMPONENTS_ALL Core)
 set (CPACK_COMPONENT_CORE_DISPLAY_NAME "Core components")
 set (CPACK_COMPONENT_CORE_DESCRIPTION "Core library with headers")
 set (CPACK_COMPONENT_CORE_REQUIRED TRUE)
-set (CPACK_NSIS_DISPLAY_NAME ${PROJECT_NAME})
+
+if (WIN32 AND NOT UNIX)
+	set (CPACK_NSIS_DISPLAY_NAME ${PROJECT_NAME})
+elseif (UNIX)
+	set (CPACK_GENERATOR STGZ)
+endif()
+
 include (CPack)

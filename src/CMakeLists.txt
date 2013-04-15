@@ -1,10 +1,12 @@
-include_directories(${CMAKE_BINARY_DIR}
+set (CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
+
+include (CheckPrototypeExists)
+include_directories (${CMAKE_BINARY_DIR}
 		    ${PROJECT_SOURCE_DIR}
 		    ${PROJECT_SOURCE_DIR}/src
-		    ${PROJECT_SOURCE_DIR}/config/win32
 )
 
-set(SCALIB_PUBLIC_HDRS
+set (SCALIB_PUBLIC_HDRS
 	scaangle.h
 	scacoordinates.h
 	scaearth.h
@@ -18,12 +20,11 @@ set(SCALIB_PUBLIC_HDRS
 	scasun.h
 )
 
-set(SCALIB_PRIVATE_HDRS
-	${PROJECT_SOURCE_DIR}/config/win32/config.h
-	${PROJECT_SOURCE_DIR}/config/win32/scalib.def
-)
+if (WIN32)
+	set (SCALIB_PRIVATE_HDRS ${PROJECT_SOURCE_DIR}/config/win32/scalib.def)
+endif()
 
-set(SCALIB_SRCS
+set (SCALIB_SRCS
 	scaangle.c
 	scacoordinates.c
 	scaearth.c
@@ -35,29 +36,47 @@ set(SCALIB_SRCS
 	scasun.c
 )
 
-add_library(sca SHARED ${SCALIB_SRCS} ${SCALIB_PUBLIC_HDRS} ${SCALIB_PRIVATE_HDRS})
-add_library(scastatic STATIC ${SCALIB_SRCS} ${SCALIB_PUBLIC_HDRS} ${SCALIB_PRIVATE_HDRS})
-add_definitions(-DSCALIB_COMPILATION)
+add_library (sca SHARED ${SCALIB_SRCS} ${SCALIB_PUBLIC_HDRS} ${SCALIB_PRIVATE_HDRS})
+add_library (scastatic STATIC ${SCALIB_SRCS} ${SCALIB_PUBLIC_HDRS} ${SCALIB_PRIVATE_HDRS})
+add_definitions (-DSCALIB_COMPILATION)
 
-if(MSVC)
-	add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+if (MSVC)
+	add_definitions (-D_CRT_SECURE_NO_WARNINGS -D_USE_MATH_DEFINES)
 endif()
 
-set_target_properties(sca PROPERTIES SOVERSION ${SCA_VERSION})
-set_target_properties(scastatic PROPERTIES SOVERSION ${SCA_VERSION})
+check_prototype_exists (trunc "math.h" HAVE_TRUNC_DECL)
+if (HAVE_TRUNC_DECL)
+	add_definitions (-DHAVE_TRUNC_DECL)
+endif()
 
-install(TARGETS sca scastatic EXPORT sca-targets
-	DESTINATION bin
-    	RUNTIME DESTINATION bin
+if (NOT WIN32)
+	add_definitions (-D_REENTRANT
+			 -D_PTHREADS
+			 -D_POSIX4_DRAFT_SOURCE
+			 -D_POSIX4A_DRAFT10_SOURCE
+			 -U_OSF_SOURCE
+			 -D_THREAD_SAFE
+	)
+
+	target_link_libraries (sca m)
+	target_link_libraries (scastatic m)
+endif()
+
+set_target_properties (sca PROPERTIES SOVERSION ${SCA_VERSION})
+set_target_properties (scastatic PROPERTIES SOVERSION ${SCA_VERSION})
+
+install (TARGETS sca scastatic
+	DESTINATION lib
+    	RUNTIME DESTINATION lib
 	COMPONENT Core
 )
 
-install(TARGETS sca scastatic
+install (TARGETS sca scastatic
 	DESTINATION lib
     	ARCHIVE DESTINATION lib
 	COMPONENT Core
 )
-install(TARGETS sca scastatic
+install (TARGETS sca scastatic EXPORT sca-targets
 	DESTINATION lib
     	LIBRARY DESTINATION lib
 	COMPONENT Core
@@ -72,6 +91,6 @@ set(CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS_SKIP TRUE)
 include(InstallRequiredSystemLibraries)
 
 install(PROGRAMS ${CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS} 
-	DESTINATION bin
+	DESTINATION lib
 	COMPONENT Core
 )
