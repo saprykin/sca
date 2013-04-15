@@ -67,23 +67,24 @@ set_target_properties (sca scastatic PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${OUTPU
 set_target_properties (sca PROPERTIES SOVERSION ${SCA_VERSION})
 set_target_properties (scastatic PROPERTIES SOVERSION ${SCA_VERSION})
 
+if (WIN32)
+	install (TARGETS sca scastatic
+		DESTINATION lib
+	    	RUNTIME DESTINATION lib
+		COMPONENT Core
+	)
+endif()
+
 install (TARGETS sca scastatic EXPORT sca-targets
 	DESTINATION lib
-    	RUNTIME DESTINATION lib
+    	LIBRARY DESTINATION lib
 	COMPONENT Core
 )
-
 install (TARGETS sca scastatic
 	DESTINATION lib
     	ARCHIVE DESTINATION lib
 	COMPONENT Core
 )
-install (TARGETS sca scastatic
-	DESTINATION lib
-    	LIBRARY DESTINATION lib
-	COMPONENT Core
-)
-
 install(FILES ${SCALIB_PUBLIC_HDRS}
 	DESTINATION include/SCA
 	COMPONENT Core
