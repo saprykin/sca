@@ -1,4 +1,5 @@
 set (CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
+set (OUTPUT_DIR ${CMAKE_BINARY_DIR})
 
 include (CheckPrototypeExists)
 include_directories (${CMAKE_BINARY_DIR}
@@ -62,10 +63,11 @@ if (NOT WIN32)
 	target_link_libraries (scastatic m)
 endif()
 
+set_target_properties (sca scastatic PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${OUTPUT_DIR})
 set_target_properties (sca PROPERTIES SOVERSION ${SCA_VERSION})
 set_target_properties (scastatic PROPERTIES SOVERSION ${SCA_VERSION})
 
-install (TARGETS sca scastatic
+install (TARGETS sca scastatic EXPORT sca-targets
 	DESTINATION lib
     	RUNTIME DESTINATION lib
 	COMPONENT Core
@@ -76,7 +78,7 @@ install (TARGETS sca scastatic
     	ARCHIVE DESTINATION lib
 	COMPONENT Core
 )
-install (TARGETS sca scastatic EXPORT sca-targets
+install (TARGETS sca scastatic
 	DESTINATION lib
     	LIBRARY DESTINATION lib
 	COMPONENT Core
