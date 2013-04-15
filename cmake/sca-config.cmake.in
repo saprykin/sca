@@ -1,26 +1,26 @@
 # Configure SCA
-message(STATUS "Reading ${CMAKE_CURRENT_LIST_FILE}")
-set(SCA_VERSION @SCA_VERSION@)
-message(STATUS "SCA configuration, version " ${SCA_VERSION})
+message (STATUS "Reading ${CMAKE_CURRENT_LIST_FILE}")
+set (SCA_VERSION @SCA_VERSION@)
+message (STATUS "SCA configuration, version " ${SCA_VERSION})
 
 # Tell the user project where to find our headers and libraries.
 get_filename_component (_DIR ${CMAKE_CURRENT_LIST_FILE} PATH)
-if(IS_ABSOLUTE @SCA_ROOT_DIR@)
+if (IS_ABSOLUTE @SCA_ROOT_DIR@)
 	# This is an uninstalled package (still in the build tree)
-	set(SCA_ROOT_DIR @SCA_ROOT_DIR@)
-	set(SCA_INCLUDE_DIRS @SCA_INCLUDE_DIRS@)
-	set(SCA_LIBRARY_DIRS ${SCA_ROOT_DIR})
+	set (SCA_ROOT_DIR @SCA_ROOT_DIR@)
+	set (SCA_INCLUDE_DIRS @SCA_INCLUDE_DIRS@)
+	set (SCA_LIBRARY_DIRS ${SCA_ROOT_DIR})
 else()
 	# This is an installed package; figure out the paths relative to the
 	# current directory.
-	get_filename_component(SCA_ROOT_DIR ${_DIR}/@SCA_ROOT_DIR@ ABSOLUTE)
-	set(SCA_INCLUDE_DIRS ${SCA_ROOT_DIR}/include)
-	set(SCA_LIBRARY_DIRS ${SCA_ROOT_DIR}/lib)
+	get_filename_component (SCA_ROOT_DIR ${_DIR}/@SCA_ROOT_DIR@ ABSOLUTE)
+	set (SCA_INCLUDE_DIRS ${SCA_ROOT_DIR}/include)
+	set (SCA_LIBRARY_DIRS ${SCA_ROOT_DIR}/lib)
 endif()
 
 # Read in the exported definition of the library.
-include("${_DIR}/sca-targets.cmake")
-set(SCA_LIBRARIES sca)
+include ("${_DIR}/sca-targets.cmake")
+set (SCA_LIBRARIES sca)
 
 # SCA_FOUND is set to 1 automatically.
-set(SCA_FOUND 1)	# for backwards compatibility
+set (SCA_FOUND 1)	# for backwards compatibility
