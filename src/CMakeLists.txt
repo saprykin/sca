@@ -73,6 +73,14 @@ if (WIN32)
 	    	RUNTIME DESTINATION lib
 		COMPONENT Core
 	)
+
+	set(CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS_SKIP TRUE)
+	include(InstallRequiredSystemLibraries)
+	
+	install(PROGRAMS ${CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS} 
+		DESTINATION lib
+		COMPONENT Core
+	)
 endif()
 
 install (TARGETS sca scastatic EXPORT sca-targets
@@ -87,13 +95,5 @@ install (TARGETS sca scastatic
 )
 install(FILES ${SCALIB_PUBLIC_HDRS}
 	DESTINATION include/SCA
-	COMPONENT Core
-)
-
-set(CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS_SKIP TRUE)
-include(InstallRequiredSystemLibraries)
-
-install(PROGRAMS ${CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS} 
-	DESTINATION lib
 	COMPONENT Core
 )
