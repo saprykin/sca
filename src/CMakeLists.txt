@@ -63,7 +63,9 @@ if (NOT WIN32)
 	target_link_libraries (scastatic m)
 endif()
 
-set_target_properties (sca scastatic PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${OUTPUT_DIR})
+set_target_properties (sca PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${OUTPUT_DIR})
+set_target_properties (sca PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${OUTPUT_DIR})
+set_target_properties (scastatic PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${OUTPUT_DIR})
 set_target_properties (sca PROPERTIES SOVERSION ${SCA_VERSION})
 set_target_properties (scastatic PROPERTIES SOVERSION ${SCA_VERSION})
 
