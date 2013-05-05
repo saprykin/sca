@@ -22,13 +22,18 @@ m4_define([scalib_lt_revision], [scalib_interface_age])
 m4_define([scalib_lt_age], [m4_eval(scalib_binary_age - scalib_interface_age)])
 m4_define([scalib_lt_current_minus_age], [m4_eval(scalib_lt_current - scalib_lt_age)])
 
-AC_INIT([sca], [0.0.1], [xelfium@gmail.com])
+AC_INIT([sca], [scalib_version], [xelfium@gmail.com])
 
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([m4])
 
 AM_INIT_AUTOMAKE([foreign -Wall -Werror])
-AM_CONFIG_HEADER([config.h])
+
+dnl Enable silent build when available (Automake 1.11)
+m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
+
+AC_CONFIG_SRCDIR([src/scalib.h])
+AC_CONFIG_HEADERS([config.h])
 
 SCALIB_MAJOR_VERSION=scalib_major_version
 SCALIB_MINOR_VERSION=scalib_minor_version
@@ -62,16 +67,12 @@ AC_SUBST(LT_REVISION)
 AC_SUBST(LT_AGE)
 AC_SUBST(LT_CURRENT_MINUS_AGE)
 
-dnl Enable silent build when available (Automake 1.11)
-m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
-
 dnl Check programs and stuff
-AC_PROG_CC
-AM_PROG_CC_STDC
 AM_PROG_CC_C_O
 AC_PROG_INSTALL
 
 AM_DISABLE_STATIC
+AM_PROG_AR
 AM_PROG_LIBTOOL
 
 dnl Check header files
