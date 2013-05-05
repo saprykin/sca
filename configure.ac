@@ -35,6 +35,8 @@ m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 AC_CONFIG_SRCDIR([src/scalib.h])
 AC_CONFIG_HEADERS([config.h])
 
+AM_MAINTAINER_MODE
+
 SCALIB_MAJOR_VERSION=scalib_major_version
 SCALIB_MINOR_VERSION=scalib_minor_version
 SCALIB_MICRO_VERSION=scalib_micro_version
