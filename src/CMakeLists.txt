@@ -7,6 +7,11 @@ include_directories (${CMAKE_BINARY_DIR}
 		    ${PROJECT_SOURCE_DIR}/src
 )
 
+configure_file (
+	"scalib.def.in"
+	"scalib.def"
+)
+
 set (SCALIB_PUBLIC_HDRS
 	scaangle.h
 	scacoordinates.h
@@ -22,7 +27,7 @@ set (SCALIB_PUBLIC_HDRS
 )
 
 if (WIN32)
-	set (SCALIB_PRIVATE_HDRS ${PROJECT_SOURCE_DIR}/config/win32/scalib.def)
+	set (SCALIB_PRIVATE_HDRS scalib.def)
 endif()
 
 set (SCALIB_SRCS
