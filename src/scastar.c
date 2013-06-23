@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Alexander Saprykin <xelfium@gmail.com>
+ * Copyright (C) 2011-2013 Alexander Saprykin <xelfium@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,10 +15,6 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA.
  */
-
-#ifdef HAVE_CONFIG_H
-#  include "config.h"
-#endif
 
 #include "scastar.h"
 #include "scaearth.h"
