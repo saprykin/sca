@@ -8,8 +8,8 @@ include_directories (${CMAKE_BINARY_DIR}
 )
 
 configure_file (
-	"scalib.def.in"
-	"scalib.def"
+	"${PROJECT_SOURCE_DIR}/src/scalib.def.in"
+	"${CMAKE_BINARY_DIR}/scalib.def"
 )
 
 set (SCALIB_PUBLIC_HDRS
@@ -27,7 +27,7 @@ set (SCALIB_PUBLIC_HDRS
 )
 
 if (WIN32)
-	set (SCALIB_PRIVATE_HDRS scalib.def)
+	set (SCALIB_PRIVATE_HDRS ${CMAKE_BINARY_DIR}/scalib.def)
 endif()
 
 set (SCALIB_SRCS
