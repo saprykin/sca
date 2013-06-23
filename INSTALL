@@ -1,2 +1,0 @@
-Perform `./configure && make && make install`
-Use CMake for MSVC builds.

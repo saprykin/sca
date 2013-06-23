@@ -1,5 +1,0 @@
-Name: SCALib Uninstalled
-Description: Sky Computing Algorithms Library, Not Installed
-Version: @VERSION@
-Libs: ${pc_top_builddir}/${pcfiledir}/src/libsca.la
-Cflags: -I${pc_top_builddir}/${pcfiledir} -I${pc_top_builddir}/${pcfiledir}/@srcdir@ -I${pc_top_builddir}/${pcfiledir}/@srcdir@/src
