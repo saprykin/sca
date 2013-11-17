@@ -98,4 +98,3 @@ sca_coordinates_equatorial_to_local (double jd, SCAGeoLocation *loc, SCAAngle ra
 
 	return 0;
 }
-

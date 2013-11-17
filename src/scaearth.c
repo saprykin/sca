@@ -274,4 +274,3 @@ sca_earth_get_perihelion_longitude (double jd, SCAAngle *pi)
 	
 	return 0;
 }
-

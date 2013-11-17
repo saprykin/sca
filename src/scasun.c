@@ -141,4 +141,3 @@ sca_sun_get_local_coordinates (SCASun		*sun,
 
 	return 0;
 }
-

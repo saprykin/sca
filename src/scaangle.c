@@ -255,5 +255,3 @@ sca_angle_from_decimal_degrees	(double	val)
 {
 	return val;
 }
-
-

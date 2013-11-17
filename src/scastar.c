@@ -274,4 +274,3 @@ sca_star_get_local_coordinates	(SCAStar	*star,
 
 	return 0;
 }
-

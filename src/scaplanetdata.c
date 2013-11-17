@@ -358,5 +358,3 @@ sca_planet_data_get (SCAPlanet planet, double jd, SCAAngle *lon, SCAAngle *lat, 
 
 	return 0;
 }
-
-

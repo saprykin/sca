@@ -217,4 +217,3 @@ sca_jd_get_dynamic_time (double jd)
 	/* Stephenson and Houlden approximation formulae */
 	return (-15 + (jd - 2382148.0) * (jd - 2382148.0) / 41048480.0) / SCA_SECS_IN_DAY;
 }
-
