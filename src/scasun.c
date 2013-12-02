@@ -83,7 +83,7 @@ sca_sun_get_mean_anomaly (double jd, SCAAngle *M)
 }
 
 int
-sca_sun_update_date (SCASun *sun, SCADate *date)
+sca_sun_update_date (SCASun *s, SCADate *date)
 {
 	double		jd;
 	SCAAngle	d_lon, d_abr;
@@ -91,7 +91,7 @@ sca_sun_update_date (SCASun *sun, SCADate *date)
 	SCAAngle	L, B;
 	double		R;
 	
-	if (sun == NULL || date == NULL)
+	if (s == NULL || date == NULL)
 		return -1;
 
 	jd	= sca_jd_from_calendar_date (date);
@@ -112,32 +112,32 @@ sca_sun_update_date (SCASun *sun, SCADate *date)
 	d_abr	= sca_angle_from_degrees (0, 0, -20, 489.8) / R;
 	L	+= d_abr; 
 
-	sca_coordinates_ecliptic_to_equatorial (jd, L, B, &sun->ra, &sun->dec);
+	sca_coordinates_ecliptic_to_equatorial (jd, L, B, &s->ra, &s->dec);
 
-	sun->jd		= jd;
-	sun->dst	= R;
+	s->jd	= jd;
+	s->dst	= R;
 	
 	return 0;
 }
 
 int
-sca_sun_get_local_coordinates (SCASun		*sun,
+sca_sun_get_local_coordinates (SCASun		*s,
 			       SCAGeoLocation	*loc,
 			       SCAAngle		*A,
 			       SCAAngle		*h)
 {
 	SCAAngle d_ra, d_dec;
 
-	if (sun == NULL || loc == NULL)
+	if (s == NULL || loc == NULL)
 		return -1;
 
 	/* Take parallax into account */
-	sca_earth_get_parallax_equatorial (sun->jd, sun->dst, loc, sun->ra, sun->dec, &d_ra, &d_dec);
+	sca_earth_get_parallax_equatorial (s->jd, s->dst, loc, s->ra, s->dec, &d_ra, &d_dec);
 	
-	sun->ra		+= d_ra;
-	sun->dec	+= d_dec;
+	s->ra	+= d_ra;
+	s->dec	+= d_dec;
 
-	sca_coordinates_equatorial_to_local (sun->jd, loc, sun->ra, sun->dec, A, h);
+	sca_coordinates_equatorial_to_local (s->jd, loc, s->ra, s->dec, A, h);
 
 	return 0;
 }

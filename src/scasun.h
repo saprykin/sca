@@ -202,13 +202,13 @@ int	sca_sun_get_mean_anomaly	(double jd, SCAAngle *M);
 #else
 /**
  * @brief Calculates Sun's position for given date.
- * @param[out] sun #SCASun object for updating.
+ * @param[out] s #SCASun object for updating.
  * @param date Date in UT to perform calculation for.
  * @return 0 in case of success, -1 otherwise.
  * @since 0.0.1
  */
 #endif
-int	sca_sun_update_date		(SCASun *sun, SCADate *date);
+int	sca_sun_update_date		(SCASun *s, SCADate *date);
 
 #ifdef DOXYGEN_RUSSIAN
 /**
@@ -224,7 +224,7 @@ int	sca_sun_update_date		(SCASun *sun, SCADate *date);
 #else
 /**
  * @brief Calculates local coordinates of the Sun including parallax corrections.
- * @param sun #SCASun object.
+ * @param s #SCASun object.
  * @param loc Observer location.
  * @param[out] A Azimuth (positive westward from south), may be NULL.
  * @param[out] h Altitude above horizon, may be NULL.
@@ -233,7 +233,7 @@ int	sca_sun_update_date		(SCASun *sun, SCADate *date);
  * @note To take in account refraction use sca_earth_get_refraction() routine.
  */
 #endif
-int	sca_sun_get_local_coordinates	(SCASun *sun, SCAGeoLocation *loc, SCAAngle *A, SCAAngle *h);
+int	sca_sun_get_local_coordinates	(SCASun *s, SCAGeoLocation *loc, SCAAngle *A, SCAAngle *h);
 
 SCA_END_DECLS
 
