@@ -112,4 +112,3 @@ sca_misc_interpolate_five (double	x[5],
 SCA_END_DECLS
 
 #endif /* __SCAMISC_H__ */
-
