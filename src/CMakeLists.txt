@@ -47,7 +47,16 @@ add_library (scastatic STATIC ${SCALIB_SRCS} ${SCALIB_PUBLIC_HDRS} ${SCALIB_PRIV
 add_definitions (-DSCALIB_COMPILATION)
 
 if (MSVC)
-	add_definitions (-D_CRT_SECURE_NO_WARNINGS -D_USE_MATH_DEFINES)
+	add_definitions (-D_CRT_SECURE_NO_WARNINGS)
+	add_definitions (-D_USE_MATH_DEFINES)
+
+	if (CMAKE_CXX_FLAGS MATCHES "/W[0-4]")
+		string (REGEX REPLACE "/W[0-4]" "/W4" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+	else()
+		set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4")
+	endif()
+elseif (CMAKE_COMPILER_IS_GNUCC)
+	set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-long-long -Wpedantic")
 endif()
 
 check_prototype_exists (trunc "math.h" HAVE_TRUNC_DECL)
