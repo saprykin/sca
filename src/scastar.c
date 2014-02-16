@@ -155,14 +155,13 @@ _sca_star_get_aberration_equatorial (SCAStar *star, double jd, SCAAngle *abr_ra,
 
 /**
  * @brief Calculates nutation in ecliptical coordinates.
- * @param star Star to perform calculation for.
  * @param jd Julian Day corresponding to calculation instance.
  * @param nut_lon Output nutation in longitude.
  * @param nut_lat Output nutation in latitude.
  * @since 0.0.1
  */
 static void
-_sca_star_get_nutation_ecliptic (SCAStar *star, double jd, SCAAngle *nut_lon, SCAAngle *nut_lat)
+_sca_star_get_nutation_ecliptic (double jd, SCAAngle *nut_lon, SCAAngle *nut_lat)
 {
 	if (nut_lon != NULL)
 		sca_earth_get_nutation (jd, nut_lon, NULL);

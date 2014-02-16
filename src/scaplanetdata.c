@@ -37,13 +37,14 @@
 #include <scajulianday.h>
 
 #define SCA_PLANET_DATA_MAX	6
+#define SCA_PLANET_EARTH_TERMS	195
 
 /** Private structure for planet data. */
 typedef struct _SCAPlanetDataPrivate {
-	unsigned int	L_size[SCA_PLANET_DATA_MAX];	/**< Sizes of L-series terms.	*/
-	unsigned int	B_size[SCA_PLANET_DATA_MAX];	/**< Sizes of B-series terms.	*/
-	unsigned int	R_size[SCA_PLANET_DATA_MAX];	/**< Sizes of R-series terms.	*/
-	double		data[][3];			/**< Terms data.		*/
+	unsigned int	L_size[SCA_PLANET_DATA_MAX];		/**< Sizes of L-series terms.	*/
+	unsigned int	B_size[SCA_PLANET_DATA_MAX];		/**< Sizes of B-series terms.	*/
+	unsigned int	R_size[SCA_PLANET_DATA_MAX];		/**< Sizes of R-series terms.	*/
+	double		data[SCA_PLANET_EARTH_TERMS][3];	/**< Terms data.		*/
 } SCAPlanetDataPrivate;
 
 const static SCAPlanetDataPrivate earth_data = {
