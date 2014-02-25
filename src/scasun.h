@@ -238,4 +238,3 @@ int	sca_sun_get_local_coordinates	(SCASun *s, SCAGeoLocation *loc, SCAAngle *A, 
 SCA_END_DECLS
 
 #endif /* __SCASUN_H__ */
-

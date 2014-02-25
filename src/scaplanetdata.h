@@ -135,4 +135,3 @@ int sca_planet_data_get (SCAPlanet planet, double jd, SCAAngle *lon, SCAAngle *l
 SCA_END_DECLS
 
 #endif /* __SCAPLANETDATA_H__ */
-

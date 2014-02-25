@@ -144,4 +144,3 @@
 #define SCA_WARNING(module, str) printf ("%s: %s\n", module, str)
 
 #endif /* __SCAMACROS_H__ */
-
