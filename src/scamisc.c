@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Alexander Saprykin <xelfium@gmail.com>
+ * Copyright (C) 2011-2014 Alexander Saprykin <xelfium@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -95,7 +95,6 @@ sca_misc_interpolate_five (double	x[5],
 	/* Find central value */
 	norm = fabs (x[1] - x[0]) > 1.0 ? fabs (x[1] - x[0]) : 1.0;
 	factor = (xval - x[2]) / norm;
-
 
 	if (factor > 0.5)
 		SCA_WARNING ("SCAMisc", "Bad interpolating factor, results may have low accuracy");
