@@ -178,7 +178,6 @@ sca_moon_update_date (SCAMoon *moon, SCADate *date)
 		return -1;
 
 	jd	= sca_jd_from_calendar_date (date);
-	jd	+= sca_jd_get_dynamic_time (jd);
 	t	= sca_jd_get_centuries_2000 (jd);
 
 	/* Moon's mean longitude, to take in account flattering of the Earth */

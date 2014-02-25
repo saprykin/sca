@@ -95,7 +95,6 @@ sca_sun_update_date (SCASun *s, SCADate *date)
 		return -1;
 
 	jd	= sca_jd_from_calendar_date (date);
-	jd	+= sca_jd_get_dynamic_time (jd);
 		
 	sca_planet_data_get (SCA_PLANET_EARTH, jd, &L, &B, &R);
 

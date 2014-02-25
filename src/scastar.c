@@ -243,7 +243,6 @@ sca_star_update_date (SCAStar	*star,
 		return -1;
 
 	jd = sca_jd_from_calendar_date (date);
-	jd += sca_jd_get_dynamic_time (jd);
 
 	star->ra	= star->ra2000;
 	star->dec	= star->dec2000;
