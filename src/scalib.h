@@ -25,13 +25,7 @@
 
 /**
  * @page compile_with_scalib Компиляция приложения со SCALib
- * Чтобы скомпилировать приложение вместе со SCALib, необходимо выполнить следующие шаги:
- * - подключить основной заголовочный файл scalib.h в проекте - другие заголовочные файлы напрямую
- *   использовать нельзя;
- * - указать компилятору директорию с заголовочными файлами SCALib (используя опцию -I для
- *   компилятора gcc напрямую или с помощью pkg-config: `pkg-config --cflags sca`);
- * - скомпилировать приложение вместе с библиотекой SCALib (используя опции -lsca и -L&lt;directory&gt;
- *   для gcc напрямую или с помощью pkg-config: `pkg-config --libs sca`).
+ * Чтобы скомпилировать приложение используйте CMake.
  *
  * Учтите, что подключать в проекте можно только заголовочный файл scalib.h, подключать другие
  * заголовочные файлы библиотеки SCALib напрямую в проекте не следует.
@@ -82,12 +76,7 @@
 
 /**
  * @page compile_with_scalib Compiling application with SCALib
- * In order to compile your application with SCALib you should do the following steps:
- * - include main header file scalib.h into your project - do not use other headers directly;
- * - point compiler for directory with SCALib headers (you can use -I option for gcc
- *   directly or with pkg-config tool: `pkg-config --cflags sca`);
- * - compile your application with SCALib library (you can use -lsca and -L&lt;directory&gt;
- *   options for gcc directly or with pkg-config: `pkg-config --libs sca`).
+ * In order to compile your application with SCALib use CMake.
  *
  * Note that you need only scalib.h header, other SCALib headers shouldn't be
  * included directly into the project.
