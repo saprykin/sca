@@ -15,7 +15,7 @@
  * Calculates stars positions
  * Calculates planets positions
 
- Library has extemsive Doxygen powered documentation with a lot of examples.
+ Library has extensive Doxygen powered documentation with a lot of examples.
  
  ======= Building =======
  Use CMake to build SCALib for target platform.
