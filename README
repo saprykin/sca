@@ -1,4 +1,5 @@
  ======= About SCALib =======
+ 
  SCALib stands for Sky Computing Algorithms Library. It can be used to
  calculate position of the star, Sun, Moon or any planet for given instance of
  time. The main purpose is to provide data for sky observations from the
@@ -7,6 +8,7 @@
  taken from the "Astronomical algorithms" by J. Meeus.
 
  ======= Features =======
+ 
  * Angles handling
  * Coordinate systems transformations
  * Calendar routines
@@ -18,7 +20,9 @@
  Library has extensive Doxygen powered documentation with a lot of examples.
  
  ======= Building =======
+ 
  Use CMake to build SCALib for target platform.
 
  ======= License =======
+ 
  SCALib is distributed under the terms of GNU GPLv2 license.
